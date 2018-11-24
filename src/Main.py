@@ -1,6 +1,10 @@
 import FloydWarshall as fw
+import GraphCenter as gc
 
+# N is used to represent infinity. This should be greater than any edge weights in the graph.
 N = 9999
+
+# Graphs are represented by an adjacency matrix.
 
 # The center of this graph should be 3.
 testGraph1 = [[0, N, N, 1],
@@ -22,6 +26,8 @@ testGraph3 = [[0, N, N, N, 1],
               [1, 2, 1, 2, 0]]
 
 def main():
-    pass
+    shortestPaths = fw.AllPairsShortestPath(testGraph1)
+    centerNode = gc.findCenter(shortestPaths)
+    print(centerNode)
 
 main()
