@@ -3,6 +3,7 @@
 def findShortestPaths(adjacenyMatrix):
     graphOrder = len(adjacenyMatrix)
 
+# This finds the shortest path between every pair of nodes.
     for k in range(graphOrder):
         for i in range(graphOrder):
             for j in range(graphOrder):
