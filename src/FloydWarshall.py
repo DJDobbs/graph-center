@@ -1,13 +1,13 @@
-# This function should return a matrix that shows the shortest distances between every node.
+# This function returns a new matrix that shows the shortest path between every pair of nodes.
 
-def findShortestPaths(adjacenyMatrix):
-    graphOrder = len(adjacenyMatrix)
+def findShortestPaths(graphMatrix):
+    shortestPaths = graphMatrix
+    graphOrder = len(graphMatrix)
 
-# This finds the shortest path between every pair of nodes.
     for k in range(graphOrder):
         for i in range(graphOrder):
             for j in range(graphOrder):
-                if (adjacenyMatrix[i][k] + adjacenyMatrix[k][j]) < adjacenyMatrix[i][j]:
-                    adjacenyMatrix[i][j] = adjacenyMatrix[i][k] + adjacenyMatrix[k][j]
+                if (shortestPaths[i][k] + shortestPaths[k][j]) < shortestPaths[i][j]:
+                    shortestPaths[i][j] = shortestPaths[i][k] + shortestPaths[k][j]
 
-    return adjacenyMatrix
+    return shortestPaths
